@@ -34,8 +34,18 @@
 
    $(function(){
 
-   	//code goes here
+     $(document).ready(function(){
+       $('#studentTable').DataTable({
+         dom: 'Bfrtip',
+         buttons: [
+           'copy', 'excel', 'pdf', 'csv', 'print'
+         ],
+         colReorder: true,
+         scroller: true
+       })
+     });
 
-   })
+
+     });
 
  })();

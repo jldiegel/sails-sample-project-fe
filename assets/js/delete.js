@@ -31,7 +31,14 @@
 
    $(function(){
 
-   	//code goes here
+
+      $("option").addClass("glyphicon glyphicon-pawn")
+
+      $('#student_id').selectpicker({
+          liveSearch: true,
+          header: "Choose Student",
+          title: "Select"
+      });
 
    })
 

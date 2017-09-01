@@ -28,7 +28,57 @@
 
   $(function(){
 
-  	//code goes here
+    $("#addStudentForm").validate({
+
+      errorClass: "text-danger",
+
+      rules:  {
+
+        first_name: {
+          required: true,
+          minlength: 2
+        },
+
+        last_name:  {
+          required: true,
+          minlength: 2
+        },
+
+        start_date:  {
+          dateISO: true
+        },
+
+        gpa: {
+          required: true,
+          number: true
+        },
+
+        major_id:  {
+          required: true,
+        },
+
+        sat: {
+          required: true
+        }
+
+      },
+
+      messages: {
+
+        first_name:  {
+          required: "You must enter your first name"
+        },
+
+        last_name:  {
+          required: "You must enter your last name"
+        },
+
+      }
+
+    });
+
+
+
 
   })
 

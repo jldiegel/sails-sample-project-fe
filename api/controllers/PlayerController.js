@@ -7,7 +7,7 @@
 
 var Client = require('node-rest-client').Client;
 var client = new Client();
-var endpoint = "http://localhost:1337/student"
+var endpoint = "http://localhost:1337/player"
 
 module.exports = {
 
@@ -46,9 +46,9 @@ module.exports = {
   read: function (req, res) {
 
     client.get(endpoint, function (data, response) {
-        return res.view('read', {students: data});
+        return res.view('read', {players: data});
     }).on('error', function (err) {
-        return res.view('read', {error: { message: "There was an error getting the students"}});
+        return res.view('read', {error: { message: "There was an error getting the players"}});
     });
 
   },
@@ -62,9 +62,9 @@ module.exports = {
     if(req.method != "POST"){
 
       client.get(endpoint, function (data, response) {
-        return res.view('update', {students: data});
+        return res.view('update', {players: data});
       }).on('error', function (err) {
-          return res.view('update', {error: { message: "There was an error getting the students"}});
+          return res.view('update', {error: { message: "There was an error getting the players"}});
       });
 
     }else{
@@ -97,14 +97,14 @@ module.exports = {
     if(req.method != "POST"){
 
       client.get(endpoint, function (data, response) {
-        return res.view('delete', {students: data});
+        return res.view('delete', {players: data});
       }).on('error', function (err) {
-          return res.view('delete', {error: { message: "There was an error getting the students"}});
+          return res.view('delete', {error: { message: "There was an error getting the players"}});
       });
 
     }else{
 
-      client.delete(endpoint + "/" + req.body.student_id, function (data, response) {
+      client.delete(endpoint + "/" + req.body.id, function (data, response) {
 
         if(response.statusCode != "200"){
             req.addFlash("error", data.message);

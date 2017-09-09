@@ -34,9 +34,9 @@
 
       $("option").addClass("glyphicon glyphicon-pawn")
 
-      $('#student_id').selectpicker({
+      $('#id').selectpicker({
           liveSearch: true,
-          header: "Choose Student",
+          header: "Choose Player",
           title: "Select"
       });
 

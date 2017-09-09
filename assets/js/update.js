@@ -44,20 +44,20 @@
 
    $(function(){
 
-      let currentStudent
+      let currentPlayer
 
-     $("#updateStudentForm").validate({
+     $("#updatePlayerForm").validate({
 
        errorClass: "text-danger",
 
        rules:  {
 
-         first_name: {
+         firstName: {
            required: true,
            minlength: 2
          },
 
-         last_name:  {
+         lastName:  {
            required: true,
            minlength: 2
          },
@@ -69,46 +69,41 @@
          gpa: {
            required: true,
            number: true
-         },
-
-         major_id:  {
-           required: true,
-         },
-
-         sat: {
-           required: true
          }
 
        },
 
        messages: {
 
-         first_name:  {
-           required: "You must enter your first name"
+         firstName:  {
+           required: "You must enter a first name"
          },
 
-         last_name:  {
-           required: "You must enter your last name"
+         lastName:  {
+           required: "You must enter a last name"
          },
 
        }
 
      });
 
-     $("#updateStudentForm :input").prop("disabled", true);
+     $("#updatePlayerForm :input").prop("disabled", true);
 
 
 
-     $('#student_id').on('change', function(){
-        currentStudent = $(this).find("option:selected").val();
-        $.get("http://localhost:1337/student/"+currentStudent, function(data){
+     $('#id').on('change', function(){
+        console.log($(this))
+        console.log($(this).find("option:selected"))
+        console.log($(this).find("option:selected").val());
+        currentPlayer = $(this).find("option:selected").val();
+        $.get("http://localhost:1337/player/"+currentPlayer, function(data){
             $.each(data, function(key, val){
               let el=$('[name="'+key+'"]');
               let type = el.attr('type');
               el.val(val);
             })
         })
-        $("#updateStudentForm :input").prop("disabled", false);
+        $("#updatePlayerForm :input").prop("disabled", false);
       })
 
 

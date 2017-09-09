@@ -35,7 +35,7 @@
    $(function(){
 
      $(document).ready(function(){
-       $('#studentTable').DataTable({
+       $('#playerTable').DataTable({
          dom: 'Bfrtip',
          buttons: [
            'copy', 'excel', 'pdf', 'csv', 'print'

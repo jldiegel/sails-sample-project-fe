@@ -42,9 +42,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/create':'StudentController.create',
-  '/'      :'StudentController.read',
-  '/update':'StudentController.update',
-  '/delete':'StudentController.delete'
+  '/create':'PlayerController.create', //got to StudentController.js (in api folder), and call the create method. The create method returns the view, which is the views file create.ejs (html). Then the create.js file in the assets/js folder is what is used to manupulate the dom for create.ejs
+  '/'      :'PlayerController.read',
+  '/update':'PlayerController.update',
+  '/delete':'PlayerController.delete'
 
 };

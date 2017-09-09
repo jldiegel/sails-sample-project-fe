@@ -24,11 +24,12 @@
  *
  */
 
+
 (function(){
 
   $(function(){
 
-    $("#addStudentForm").validate({
+    $("#addPlayerForm").validate({
 
       errorClass: "text-danger",
 
@@ -66,11 +67,11 @@
       messages: {
 
         first_name:  {
-          required: "You must enter your first name"
+          required: "You must enter a first name"
         },
 
         last_name:  {
-          required: "You must enter your last name"
+          required: "You must enter a last name"
         },
 
       }
